@@ -5,7 +5,7 @@
  * http://a-smartech.com
  */
 
-//Verfy Token Provided to ASTpos (Example only as hardcoded you can get tiken from DB and compare it with client provided token hash)
+//Verfy Token Provided to ASTpos (Example only as hardcoded, You can get Token from DB and compare it with token hash provided by ASTpos(Client))
 $clientToken = $_GET['token'];
 $ServerToken = "eb636e98be40f97ffc20aa3835fcbb5f";
 if ($clientToken != $ServerToken) {
