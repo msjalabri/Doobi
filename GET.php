@@ -31,6 +31,9 @@ mysqli_set_charset($Connect, 'utf8');
 mysqli_query($Connect, "SET NAMES 'utf8'");
 mysqli_query($Connect, 'SET CHARACTER SET utf8');
 
+//set timezone
+date_default_timezone_set('Asia/Muscat');
+
 //Set page content type as JSON output
 header("Content-Type: application/json;charset=utf-8");
 
@@ -48,6 +51,7 @@ if (@mysqli_num_rows($Show) > 0) {
         $data[$i]['cartprice'] = $Row['cartprice'];
         $data[$i]['DatePickup'] = $Row['DatePickup'];
         $data[$i]['DateReturn'] = $Row['DateReturn'];
+        $i++;
     }
 } else {
     $data['title'] = "Error ";
