@@ -37,7 +37,7 @@ header("Content-Type: application/json;charset=utf-8");
 //Read Database from Table "DoobiOrder"
 $data = array();
 $i = 0;
-$Show = mysqli_query($GLOBALS['Connect'], "SELECT * FROM `inventory_products`  WHERE product_code='" . $sku . "' and clientid=" . $_SESSION['clientid']);
+$Show = mysqli_query($GLOBALS['Connect'], "SELECT * FROM `DoobiOrder` order by `OredrDate` DESC");
 if (@mysqli_num_rows($Show) > 0) {
     while (@$Row = mysqli_fetch_array($Show, MYSQLI_ASSOC)) {
         $data[$i]['OrderID'] = $Row['OrderID'];
